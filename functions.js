@@ -1,24 +1,31 @@
-function getCurrentTime(){
+/**
+ * Obtains hour and minutes to show as the time of the message
+ * @returns string 
+ */
+
+function getCurrentTime()
+{
     var now = new Date();
     var hh = now.getHours();
     var min = now.getMinutes();
-    var ampm = (hh>= 12)?'PM':'AM';
 
-    hh = hh%12;
-    hh = hh ? hh : 12;
-    hh = hh < 10 ? '0' + hh:hh ;
-    min = min < 10 ? '0' + min:min;
+    min = min < 10 ? '0' + min : min;
 
-    var time = hh + ":" + min + " " + ampm;
+    var time = hh + ":" + min ;
+
     return time;
 }
 
-function sendMessage(){
+/**
+ * Shows the response from the message recieved
+ */
+function sendMessage()
+{
     jQuery('.start_chat').hide();
 
     var text = jQuery('#input-me').val();
     if(text !== ''){
-        var html = '<li class="messages-me clearfix"><span class="message-img"><img src="image/user_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title">Me</strong> <small class="time-messages text-muted"><span class="fas fa-time"></span> <span class="minutes">'+getCurrentTime()+'</span></small> </div><p class="messages-p">'+text+'</p></div></li>';
+        var html = '<li class="messages-me clearfix"><span class="message-img"><img src="image/user_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title">Me</strong> <span class="time-messages text-muted font-weight-light"><span class="fas fa-time"></span> <span class="minutes">'+getCurrentTime()+'</span></span> </div><p class="messages-p">'+text+'</p></div></li>';
         jQuery('.messages-list').append(html);
         jQuery('#input-me').val('');
     
@@ -28,7 +35,7 @@ function sendMessage(){
                 type:'post',
                 data:'text=' + text,
                 success:function(result){
-                    var html = '<li class="messages-you clearfix"><span class="message-img"><img src="image/bot_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title">Chatbot</strong> <small class="time-messages text-muted"><span class="fas fa-time"></span> <span class="minutes">'+getCurrentTime()+'</span></small> </div><p class="messages-p">'+result+'</p></div></li>';
+                    var html = '<li class="messages-you clearfix"><span class="message-img"><img src="image/bot_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title">JuliBot</strong> <span class="time-messages text-muted font-weight-light "><span class="fas fa-time"></span> <span class="minutes">'+getCurrentTime()+'</span></span> </div><p class="messages-p">'+result+'</p></div></li>';
                     jQuery('.messages-list').append(html);
                     jQuery('.messages-box').scrollTop(jQuery('.messages-box')[0].scrollHeight);
                 }
@@ -39,3 +46,12 @@ function sendMessage(){
     }
     
 }
+
+/**
+ * Shows the response from the message recieved
+ */
+function changeLanguage(language)
+{
+ $_GET['language'] = language;
+
+}     

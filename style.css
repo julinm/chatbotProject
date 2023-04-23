@@ -1,15 +1,7 @@
-.unread {
-	cursor: pointer;
-	background-color: #a7ccee;
-}
 .messages-box {
-	max-height: 28rem;
+	max-height: 65rem;
 	overflow: auto;
-}
-.online-circle {
-	border-radius: 5rem;
-	width: 5rem;
-	height: 5rem;
+	background-color: rgba(228, 227, 227, 0.514);
 }
 .messages-title {
 	float: right;
@@ -23,9 +15,6 @@
 	text-align: right;
 	width: 100%;
 	margin-bottom: 0.5rem;
-}
-.text-editor {
-	min-height: 18rem;
 }
 .messages-list li.messages-you .messages-title {
 	float: left;
@@ -45,10 +34,14 @@
 	padding: 5px;
 	border: #59b0b642 1px solid;
 	border-radius: 5px;
+	background-color: rgba(188, 127, 245, 0.192);
+	box-shadow: 5px 5px 2px rgba(173, 216, 230, 0.637);
 }
 .messages-list li.messages-me p {
 	float: right;
+	background-color: aliceblue;
+	box-shadow: 5px 5px 2px rgba(173, 216, 230, 0.637);
 }
-.ql-editor p {
-	font-size: 1rem;
-}  
+.info{
+	text-align: center;
+}
