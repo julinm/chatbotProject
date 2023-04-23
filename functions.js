@@ -25,7 +25,7 @@ function sendMessage()
 
     var text = jQuery('#input-me').val();
     if(text !== ''){
-        var html = '<li class="messages-me clearfix"><span class="message-img"><img src="image/user_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title">Me</strong> <span class="time-messages text-muted font-weight-light"><span class="fas fa-time"></span> <span class="minutes">'+getCurrentTime()+'</span></span> </div><p class="messages-p">'+text+'</p></div></li>';
+        var html = '<li class="messages-me clearfix"><span class="message-img"><img src="image/user_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title text-secondary">Me</strong> <span class="time-messages text-muted font-weight-secondary"><span class="fas fa-time"></span> <span class="minutes text-info">'+getCurrentTime()+'</span></span> </div><p class="messages-p">'+text+'</p></div></li>';
         jQuery('.messages-list').append(html);
         jQuery('#input-me').val('');
     
@@ -35,7 +35,7 @@ function sendMessage()
                 type:'post',
                 data:'text=' + text,
                 success:function(result){
-                    var html = '<li class="messages-you clearfix"><span class="message-img"><img src="image/bot_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title">JuliBot</strong> <span class="time-messages text-muted font-weight-light "><span class="fas fa-time"></span> <span class="minutes">'+getCurrentTime()+'</span></span> </div><p class="messages-p">'+result+'</p></div></li>';
+                    var html = '<li class="messages-you clearfix"><span class="message-img"><img src="image/bot_avatar.png" class="avatar-sm rounded-circle"></span><div class="message-body clearfix"><div class="message-header"><strong class="messages-title text-secondary">JuliBot</strong> <span class="time-messages text-muted font-weight-secondary "><span class="fas fa-time"></span> <span class="minutes text-info">'+getCurrentTime()+'</span></span> </div><p class="messages-p text-light">'+result+'</p></div></li>';
                     jQuery('.messages-list').append(html);
                     jQuery('.messages-box').scrollTop(jQuery('.messages-box')[0].scrollHeight);
                 }

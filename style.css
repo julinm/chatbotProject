@@ -1,7 +1,28 @@
+.chat-background{
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
+.full-background{
+	background-image: url('image/background.png');
+	background-size: cover;
+}
+
+.background {
+	background-color: rgba(0, 0, 0, 0.233);
+}
+.dot {
+	height: 10px;
+	width: 10px;
+	background-color: #41ac10;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 8px;
+	margin-top: 5px;
+  }
 .messages-box {
 	max-height: 65rem;
 	overflow: auto;
-	background-color: rgba(228, 227, 227, 0.514);
 }
 .messages-title {
 	float: right;
@@ -32,10 +53,10 @@
 .messages-list li p {
 	max-width: 60%;
 	padding: 5px;
-	border: #59b0b642 1px solid;
+	border: #252a2b42 1px solid;
 	border-radius: 5px;
-	background-color: rgba(188, 127, 245, 0.192);
-	box-shadow: 5px 5px 2px rgba(173, 216, 230, 0.637);
+	background-color: rgba(173, 110, 231, 0.514);
+	box-shadow: 5px 5px 2px  rgba(203, 167, 236, 0.39);
 }
 .messages-list li.messages-me p {
 	float: right;
@@ -43,5 +64,5 @@
 	box-shadow: 5px 5px 2px rgba(173, 216, 230, 0.637);
 }
 .info{
-	text-align: center;
+	text-align: left;
 }
